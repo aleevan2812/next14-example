@@ -1,7 +1,7 @@
 'use client';
 
-import ButtonLogout from '@/components/button-logout';
-import { ModeToggle } from '@/components/mode-toggle';
+import ButtonLogout from '@/components/ButtonLogout';
+import { ModeToggle } from '@/components/ModeToggle';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 

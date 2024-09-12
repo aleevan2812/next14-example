@@ -2,7 +2,7 @@ import React from 'react';
 
 import { productApiRequest } from '@/apiRequests/product';
 import { Product } from '../../../../../public/types';
-import ProductForm from '@/app/products/product-form';
+import ProductForm from '@/components/forms/ProductForm';
 
 type Props = {
   params: { id: string };

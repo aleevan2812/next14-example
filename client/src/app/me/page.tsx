@@ -1,7 +1,7 @@
 'use client';
 
 import { accountApiRequest } from '@/apiRequests/account';
-import ProfileForm from '@/app/me/profile-form';
+import ProfileForm from '@/components/forms/ProfileForm';
 import React, { useEffect, useState } from 'react';
 import { Profile } from '../../../public/types';
 

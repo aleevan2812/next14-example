@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import { Product } from '../../../public/types';
+import { Product } from '../../public/types';
 import Link from 'next/link';
 import { productApiRequest } from '@/apiRequests/product';
 import { useToast } from '@/hooks/use-toast';

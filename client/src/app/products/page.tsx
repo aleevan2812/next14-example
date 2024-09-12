@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { productApiRequest } from '@/apiRequests/product';
-import ProductsTable from '@/app/products/products-table';
+import ProductsTable from '@/components/ProductsTable';
 import { Product } from '../../../public/types';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
