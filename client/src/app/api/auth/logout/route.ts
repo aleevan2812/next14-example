@@ -7,6 +7,8 @@ export async function POST(request: Request) {
   cookieStore.delete('accessToken');
   cookieStore.set('isLoggedIn', 'false');
 
+  // localStorage.clear();
+
   if (!accessToken) {
     return Response.json(
       {
@@ -17,6 +19,8 @@ export async function POST(request: Request) {
       }
     );
   }
+
+  // localStorage.clear();
 
   const result = await authApiRequest.sLogout({ accessToken });
   return Response.json(result.payload);

@@ -5,6 +5,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/Header';
+import AppProvider from '@/app/AppProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,8 +29,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
+          <AppProvider>
+            <Header />
+            {children}
+          </AppProvider>
         </ThemeProvider>
       </body>
     </html>

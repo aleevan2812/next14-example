@@ -1,16 +1,18 @@
 'use client';
 
-import authApiRequest from '@/apiRequests/auth';
 import { Button } from '@/components/ui/button';
-import { useRouter } from 'next/navigation';
+import { useAuth } from '@/hooks/useAuth';
+
 import React from 'react';
 
 export default function LogoutButton() {
-  const router = useRouter();
+  const { logout } = useAuth();
 
   const handleLogout = async () => {
-    await authApiRequest.logout();
-    router.push('/login');
+    // await authApiRequest.logout();
+    // router.push('/login');
+    // localStorage.clear();
+    await logout();
   };
 
   // Return the button element from the component itself

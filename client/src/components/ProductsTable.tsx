@@ -32,8 +32,6 @@ export default function ProductsTable({ products }: Props) {
     });
   };
 
-  console.log(products);
-
   return (
     <div className='bg-background text-card-foreground'>
       <div className='px-6 py-8'>

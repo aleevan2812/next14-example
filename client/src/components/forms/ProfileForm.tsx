@@ -39,7 +39,7 @@ const ProfileForm = ({ profile }: Props) => {
     const result = await accountApiRequest.sUpdateMe({
       body: values,
     });
-    console.log(result);
+   
 
     router.refresh();
   }

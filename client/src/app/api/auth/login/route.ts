@@ -9,6 +9,8 @@ export async function POST(request: Request) {
   try {
     const { payload } = await authApiRequest.sLogin(body);
     const accessToken = payload.data.token;
+    const user = payload.data.account;
+    console.log(user);
     const decodedAccessToken = jwt.decode(accessToken) as { exp: number };
     cookieStore.set('accessToken', accessToken, {
       path: '/',
@@ -27,6 +29,7 @@ export async function POST(request: Request) {
 
     return Response.json(payload);
   } catch (error) {
+    console.log(error);
     return Response.json(
       {
         message: 'Có lỗi xảy ra',

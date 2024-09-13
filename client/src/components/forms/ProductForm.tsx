@@ -56,7 +56,7 @@ export default function ProductForm({ product, isEdit }: Props) {
       formData.append('file', file as Blob);
       const uploadImageResult = await mediaApiRequest.uploadImage(formData);
       const imageUrl = uploadImageResult.payload.data;
-      console.log('---> url image: ', imageUrl);
+     
 
       values = {
         ...values,
@@ -77,7 +77,7 @@ export default function ProductForm({ product, isEdit }: Props) {
       description: res.payload.message,
     });
 
-    console.log('res: ', res);
+    
     router.push('/products');
     router.refresh();
   };

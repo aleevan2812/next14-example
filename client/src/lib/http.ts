@@ -48,8 +48,6 @@ const request = async <Response>(
 
   const payload: Response = await res.json();
 
-  // console.log(payload);
-
   const data = {
     status: res.status,
     payload,

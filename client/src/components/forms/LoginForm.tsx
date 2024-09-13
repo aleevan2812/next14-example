@@ -20,10 +20,13 @@ import { LoginBody, LoginBodyType } from '@/schemaValidations/auth.schema';
 import authApiRequest from '@/apiRequests/auth';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/hooks/useAuth';
+
 
 export function LoginForm() {
   const { toast } = useToast();
   const router = useRouter();
+  const { login } = useAuth();
   const form = useForm<LoginBodyType>({
     resolver: zodResolver(LoginBody),
     defaultValues: {
@@ -33,14 +36,11 @@ export function LoginForm() {
   });
 
   const onSubmit = async (values: LoginBodyType) => {
-    console.log(values);
-    const res = await authApiRequest.login(values);
+    const res = await login(values);
     toast({
       title: res.status.toString(),
       description: res.payload.message,
     });
-    router.push('/me');
-    router.refresh();
   };
 
   return (
