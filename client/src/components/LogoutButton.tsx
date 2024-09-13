@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-export default function ButtonLogout() {
+export default function LogoutButton() {
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -15,8 +15,11 @@ export default function ButtonLogout() {
 
   // Return the button element from the component itself
   return (
-    <Button size={'sm'} onClick={handleLogout}>
-      Đăng xuất
-    </Button>
+    <>
+      <div className='h-4 w-4' />
+      <Button className='flex items-center gap-2 w-full' onClick={handleLogout}>
+        Đăng xuất
+      </Button>
+    </>
   );
 }

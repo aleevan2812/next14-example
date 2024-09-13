@@ -44,42 +44,47 @@ const ProfileForm = ({ profile }: Props) => {
     router.refresh();
   }
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className='space-y-2 max-w-[600 px] flex-shrink-0 w-full'
-        noValidate
-      >
-        <FormLabel>Email</FormLabel>
-        <FormControl>
-          <Input
-            placeholder='shadcn'
-            type='email'
-            value={profile?.email}
-            readOnly
+    <div className='mx-auto  space-y-6 max-w-[600px]'>
+      <div className='space-y-2 text-center'>
+        <h1 className='text-3xl font-bold'>Profile</h1>
+      </div>
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className='space-y-2 max-w-[600 px] flex-shrink-0 w-full'
+          noValidate
+        >
+          <FormLabel>Email</FormLabel>
+          <FormControl>
+            <Input
+              placeholder='shadcn'
+              type='email'
+              value={profile?.email}
+              readOnly
+            />
+          </FormControl>
+          <FormMessage />
+
+          <FormField
+            control={form.control}
+            name='name'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Tên</FormLabel>
+                <FormControl>
+                  <Input placeholder='Tên' type='text' {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
           />
-        </FormControl>
-        <FormMessage />
 
-        <FormField
-          control={form.control}
-          name='name'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Tên</FormLabel>
-              <FormControl>
-                <Input placeholder='Tên' type='text' {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <Button type='submit' className='!mt-8 w-full'>
-          Cập nhật
-        </Button>
-      </form>
-    </Form>
+          <Button type='submit' className='!mt-8 w-full'>
+            Cập nhật
+          </Button>
+        </form>
+      </Form>
+    </div>
   );
 };
 
